@@ -3,6 +3,6 @@ const router = require("express").Router();
 //Character router
 const characterRouter = require("./character");
 
-router.use("/character", characterRouter);
+router.use("/", characterRouter);
 
 module.exports = router;
