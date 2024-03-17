@@ -27,6 +27,11 @@ const characterController = {
     try {
       const id = req.params.id;
       const character = await CharacterModel.findById(id);
+
+      if (!character) {
+        return res.status(404).json({ msg: "Character not found" });
+      }
+
       res.status(200).json(character);
     } catch (error) {
       res.status(400).json({ error, msg: "Error while trying to get character" });
