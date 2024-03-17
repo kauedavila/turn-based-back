@@ -2,20 +2,22 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const characterSchema = new Schema(
+const spriteSchema = new Schema(
   {
     id: String,
     name: String,
-    level: Number,
+    idle: String,
+    attack: String,
+    hit: String,
   },
   {
     timestamps: true,
   }
 );
 
-const Character = mongoose.model("Character", characterSchema);
+const Sprite = mongoose.model("Sprite", spriteSchema);
 
 module.exports = {
-  Character,
-  characterSchema,
+  Sprite,
+  spriteSchema,
 };
