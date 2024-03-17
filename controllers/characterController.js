@@ -68,7 +68,10 @@ const characterController = {
       };
       const updatedCharacter = await CharacterModel.findByIdAndUpdate(id, character);
 
-      res.status(200).json(character);
+      if (!updatedCharacter) {
+        return res.status(400).json({ msg: "Error while trying to update character" });
+      }
+      res.status(200).json({ updatedCharacter, msg: "Character updated successfully" });
     } catch (error) {
       res.status(400).json({ error, msg: "Error while trying to get character" });
     }
