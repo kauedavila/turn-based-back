@@ -5,7 +5,7 @@ const spriteController = {
     const file = req.file;
     try {
       const sprite = {
-        name: file.path,
+        name: req.body.type + "-" + req.body.subtype + "-" + file.filename,
         src: file.path,
         type: req.body.type,
         subtype: req.body.subtype,
