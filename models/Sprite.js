@@ -4,11 +4,8 @@ const { Schema } = mongoose;
 
 const spriteSchema = new Schema(
   {
-    id: String,
     name: String,
     idle: String,
-    attack: String,
-    hit: String,
   },
   {
     timestamps: true,

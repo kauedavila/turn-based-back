@@ -7,10 +7,12 @@ const characterController = {
         name: req.body.name,
         level: req.body.level,
       };
+
       const response = await CharacterModel.create(character);
+
       res.status(201).json({ response, msg: "Character created successfully" });
     } catch (error) {
-      res.status(400).send(error);
+      res.status(400).send({ error, msg: "Error creating character" });
     }
   },
 
