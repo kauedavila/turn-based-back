@@ -5,8 +5,10 @@ const spriteController = {
     const file = req.file;
     try {
       const sprite = {
-        name: req.body.name,
-        idle: file.path,
+        name: file.path,
+        src: file.path,
+        type: req.body.type,
+        subtype: req.body.subtype,
       };
 
       const response = await SpriteModel.create(sprite);
