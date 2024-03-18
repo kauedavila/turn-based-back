@@ -7,6 +7,8 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use("/public", express.static("public"));
+
 //DB Connection
 const conn = require("./db/conn");
 

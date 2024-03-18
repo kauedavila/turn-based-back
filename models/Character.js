@@ -4,9 +4,21 @@ const { Schema } = mongoose;
 
 const characterSchema = new Schema(
   {
-    id: String,
     name: String,
     level: Number,
+    class: String,
+    experience: Number,
+    health: Number,
+    attack: Number,
+    defense: Number,
+    speed: Number,
+    moves: [
+      {
+        name: String,
+        level: Number,
+      },
+    ],
+    sprite: String,
   },
   {
     timestamps: true,

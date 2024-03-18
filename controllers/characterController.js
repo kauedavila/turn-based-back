@@ -6,6 +6,14 @@ const characterController = {
       const character = {
         name: req.body.name,
         level: req.body.level,
+        class: req.body.class,
+        experience: 0,
+        health: req.body.health,
+        attack: req.body.attack,
+        defense: req.body.defense,
+        speed: req.body.speed,
+        moves: req.body.moves,
+        sprite: req.body.sprite,
       };
 
       const response = await CharacterModel.create(character);
