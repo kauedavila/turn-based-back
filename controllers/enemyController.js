@@ -74,6 +74,13 @@ const enemyController = {
       const enemy = {
         name: req.body.name,
         level: req.body.level,
+        class: req.body.class,
+        health: req.body.health,
+        attack: req.body.attack,
+        defense: req.body.defense,
+        speed: req.body.speed,
+        moves: req.body.moves,
+        sprite: req.body.sprite,
       };
       const updatedEnemy = await EnemyModel.findByIdAndUpdate(id, enemy);
 

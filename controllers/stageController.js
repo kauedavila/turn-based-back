@@ -68,7 +68,9 @@ const stageController = {
       const id = req.params.id;
       const stage = {
         name: req.body.name,
-        level: req.body.level,
+        bg: req.body.bg,
+        enemyList: req.body.enemyList,
+        boss: req.body.boss,
       };
       const updatedStage = await StageModel.findByIdAndUpdate(id, stage);
 
