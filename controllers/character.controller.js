@@ -1,4 +1,4 @@
-const { Character: CharacterModel } = require("../models/Character");
+const { Character: CharacterModel } = require("../models/character.model");
 
 const characterController = {
   create: async (req, res) => {

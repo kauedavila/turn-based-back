@@ -1,4 +1,4 @@
-const { Sprite: SpriteModel } = require("../models/Sprite");
+const { Sprite: SpriteModel } = require("../models/sprite.model");
 
 const spriteController = {
   create: async (req, res) => {

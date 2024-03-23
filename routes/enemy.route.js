@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const enemyController = require("../controllers/enemyController");
+const enemyController = require("../controllers/enemy.controller");
 
 //POST /enemies
 router.route("/enemies").post((req, res) => enemyController.create(req, res));

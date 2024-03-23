@@ -1,4 +1,4 @@
-const { Stage: StageModel } = require("../models/Stage");
+const { Stage: StageModel } = require("../models/stage.model");
 
 const stageController = {
   create: async (req, res) => {

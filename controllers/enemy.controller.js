@@ -1,4 +1,4 @@
-const { Enemy: EnemyModel } = require("../models/Enemy");
+const { Enemy: EnemyModel } = require("../models/enemy.model");
 
 const enemyController = {
   create: async (req, res) => {

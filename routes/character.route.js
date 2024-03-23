@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const characterController = require("../controllers/characterController");
+const characterController = require("../controllers/character.controller");
 
 //POST /characters
 router.route("/characters").post((req, res) => characterController.create(req, res));

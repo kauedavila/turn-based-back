@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const stageController = require("../controllers/stageController");
+const stageController = require("../controllers/stage.controller");
 
 //POST /stages
 router.route("/stages").post((req, res) => stageController.create(req, res));
