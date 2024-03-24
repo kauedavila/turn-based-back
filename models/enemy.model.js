@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
@@ -26,7 +26,4 @@ const enemySchema = new Schema(
 
 const Enemy = mongoose.model("Enemy", enemySchema);
 
-module.exports = {
-  Enemy,
-  enemySchema,
-};
+export default Enemy;

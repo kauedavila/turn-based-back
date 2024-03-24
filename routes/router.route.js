@@ -1,24 +1,22 @@
-const router = require("express").Router();
+import express from "express";
+import characterRouter from "./character.route.js";
+import enemyRouter from "./enemy.route.js";
+import spriteRouter from "./sprite.route.js";
+import stageRouter from "./stage.route.js";
+
+const router = express.Router();
 
 //Character router
-const characterRouter = require("./character.route");
-
-router.use("/", characterRouter);
+router.use("/characters", characterRouter);
 
 //Enemy router
-const enemyRouter = require("./enemy.route");
-
-router.use("/", enemyRouter);
+router.use("/enemies", enemyRouter);
 
 //Sprite router
-const spriteRouter = require("./sprite.route");
-
-router.use("/", spriteRouter);
+router.use("/sprites", spriteRouter);
 
 //Stage router
 
-const stageRouter = require("./stage.route");
+router.use("/stages", stageRouter);
 
-router.use("/", stageRouter);
-
-module.exports = router;
+export default router;

@@ -1,9 +1,9 @@
-const router = require("express").Router();
+import express from "express";
+import spriteController from "../controllers/sprite.controller.js";
+import upload from "../config/multer.js";
 
-const upload = require("../config/multer");
+const router = express.Router();
 
-const spriteController = require("../controllers/sprite.controller");
+router.route("/").post(upload.single("src"), (req, res) => spriteController.create(req, res));
 
-router.route("/sprites").post(upload.single("src"), (req, res) => spriteController.create(req, res));
-
-module.exports = router;
+export default router;

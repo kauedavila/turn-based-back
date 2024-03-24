@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
@@ -19,7 +19,4 @@ const stageSchema = new Schema({
 
 const Stage = mongoose.model("Stage", stageSchema);
 
-module.exports = {
-  Stage,
-  stageSchema,
-};
+export default Stage;

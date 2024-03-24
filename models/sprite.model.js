@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
@@ -29,7 +29,4 @@ const spriteSchema = new Schema(
 
 const Sprite = mongoose.model("Sprite", spriteSchema);
 
-module.exports = {
-  Sprite,
-  spriteSchema,
-};
+export default Sprite;

@@ -1,18 +1,19 @@
-const router = require("express").Router();
+import express from "express";
+import enemyController from "../controllers/enemy.controller.js";
 
-const enemyController = require("../controllers/enemy.controller");
+const router = express.Router();
 
 //POST /enemies
-router.route("/enemies").post((req, res) => enemyController.create(req, res));
+router.route("/").post((req, res) => enemyController.create(req, res));
 
 //GET /enemies
-router.route("/enemies").get((req, res) => enemyController.getAll(req, res));
-router.route("/enemies/:id").get((req, res) => enemyController.getById(req, res));
+router.route("/").get((req, res) => enemyController.getAll(req, res));
+router.route("/:id").get((req, res) => enemyController.getById(req, res));
 
 //DELETE /enemies/:id
-router.route("/enemies/:id").delete((req, res) => enemyController.deleteById(req, res));
+router.route("/:id").delete((req, res) => enemyController.deleteById(req, res));
 
 //PUT /enemies/:id
-router.route("/enemies/:id").put((req, res) => enemyController.updateById(req, res));
+router.route("/:id").put((req, res) => enemyController.updateById(req, res));
 
-module.exports = router;
+export default router;

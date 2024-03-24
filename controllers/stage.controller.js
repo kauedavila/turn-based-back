@@ -1,4 +1,4 @@
-const { Stage: StageModel } = require("../models/stage.model");
+import StageModel from "../models/stage.model.js";
 
 const stageController = {
   create: async (req, res) => {
@@ -84,4 +84,4 @@ const stageController = {
   },
 };
 
-module.exports = stageController;
+export default stageController;

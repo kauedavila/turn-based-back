@@ -1,18 +1,20 @@
-const router = require("express").Router();
+import express from "express";
+import characterController from "../controllers/character.controller.js";
+import { validIdFormat, validateCharacterId } from "../middlewares/global.middlewares.js";
 
-const characterController = require("../controllers/character.controller");
+const router = express.Router();
 
 //POST /characters
-router.route("/characters").post((req, res) => characterController.create(req, res));
+router.post("/", characterController.create);
 
 //GET /characters
-router.route("/characters").get((req, res) => characterController.getAll(req, res));
-router.route("/characters/:id").get((req, res) => characterController.getById(req, res));
+router.get("/", characterController.getAll);
+router.get("/:id", validIdFormat, validateCharacterId, characterController.getById);
 
 //DELETE /characters/:id
-router.route("/characters/:id").delete((req, res) => characterController.deleteById(req, res));
+router.delete("/:id", validIdFormat, validateCharacterId, characterController.deleteById);
 
 //PUT /characters/:id
-router.route("/characters/:id").put((req, res) => characterController.updateById(req, res));
+router.put("/:id", validIdFormat, validateCharacterId, characterController.updateById);
 
-module.exports = router;
+export default router;

@@ -1,4 +1,4 @@
-const { Enemy: EnemyModel } = require("../models/enemy.model");
+import EnemyModel from "../models/enemy.model.js";
 
 const enemyController = {
   create: async (req, res) => {
@@ -94,4 +94,4 @@ const enemyController = {
   },
 };
 
-module.exports = enemyController;
+export default enemyController;

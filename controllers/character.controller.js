@@ -1,4 +1,4 @@
-const { Character: CharacterModel } = require("../models/character.model");
+import CharacterModel from "../models/character.model.js";
 
 const characterController = {
   create: async (req, res) => {
@@ -35,12 +35,7 @@ const characterController = {
 
   getById: async (req, res) => {
     try {
-      const id = req.params.id;
-      const character = await CharacterModel.findById(id);
-
-      if (!character) {
-        return res.status(404).json({ msg: "Character not found" });
-      }
+      const character = req.character;
 
       res.status(200).json(character);
     } catch (error) {
@@ -50,12 +45,7 @@ const characterController = {
 
   deleteById: async (req, res) => {
     try {
-      const id = req.params.id;
-      const character = await CharacterModel.findById(id);
-
-      if (!character) {
-        return res.status(404).json({ msg: "Character not found" });
-      }
+      const { _id: id } = req.character;
 
       const deleteCharacter = await CharacterModel.findByIdAndDelete(id);
 
@@ -71,7 +61,8 @@ const characterController = {
 
   updateById: async (req, res) => {
     try {
-      const id = req.params.id;
+      const { _id: id } = req.character;
+
       const character = {
         name: req.body.name,
         level: req.body.level,
@@ -96,4 +87,4 @@ const characterController = {
   },
 };
 
-module.exports = characterController;
+export default characterController;

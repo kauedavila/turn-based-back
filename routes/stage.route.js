@@ -1,18 +1,19 @@
-const router = require("express").Router();
+import express from "express";
+import stageController from "../controllers/stage.controller.js";
 
-const stageController = require("../controllers/stage.controller");
+const router = express.Router();
 
 //POST /stages
-router.route("/stages").post((req, res) => stageController.create(req, res));
+router.route("/").post((req, res) => stageController.create(req, res));
 
 //GET /stages
 router.route("/stages").get((req, res) => stageController.getAll(req, res));
-router.route("/stages/:id").get((req, res) => stageController.getById(req, res));
+router.route("/:id").get((req, res) => stageController.getById(req, res));
 
 //DELETE /stages/:id
-router.route("/stages/:id").delete((req, res) => stageController.deleteById(req, res));
+router.route("/:id").delete((req, res) => stageController.deleteById(req, res));
 
 //PUT /stages/:id
-router.route("/stages/:id").put((req, res) => stageController.updateById(req, res));
+router.route("/:id").put((req, res) => stageController.updateById(req, res));
 
-module.exports = router;
+export default router;

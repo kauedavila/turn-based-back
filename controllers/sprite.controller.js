@@ -1,4 +1,4 @@
-const { Sprite: SpriteModel } = require("../models/sprite.model");
+import SpriteModel from "../models/sprite.model.js";
 
 const spriteController = {
   create: async (req, res) => {
@@ -20,4 +20,4 @@ const spriteController = {
   },
 };
 
-module.exports = spriteController;
+export default spriteController;
