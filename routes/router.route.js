@@ -4,8 +4,12 @@ import enemyRouter from "./enemy.route.js";
 import spriteRouter from "./sprite.route.js";
 import stageRouter from "./stage.route.js";
 import userRouter from "./user.route.js";
+import authRouter from "./auth.route.js";
 
 const router = express.Router();
+
+//Auth router
+router.use("/auth", authRouter);
 
 //Users router
 router.use("/users", userRouter);
