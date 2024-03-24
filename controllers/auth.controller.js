@@ -1,4 +1,5 @@
 import UserModel from "../models/user.model.js";
+import { generateToken } from "../services/auth.service.js";
 import bcrypt from "bcrypt";
 
 const authController = {
@@ -18,7 +19,11 @@ const authController = {
         return res.status(401).send({ auth: false, token: null, msg: "Invalid email or password" });
       }
 
-      res.status(200).json(user.password);
+      const token = generateToken(user._id);
+
+      res.status(200).json({
+        token,
+      });
     } catch (error) {
       res.status(400).send({ error, msg: "Error login user" });
     }
