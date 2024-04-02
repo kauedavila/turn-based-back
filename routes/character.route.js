@@ -1,11 +1,12 @@
 import express from "express";
 import characterController from "../controllers/character.controller.js";
-import { validIdFormat, validateCharacterId } from "../middlewares/global.middlewares.js";
+import { validIdFormat, validateCharacterId } from "../middlewares/global.middleware.js";
+import { authMiddleware } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
 //POST /characters
-router.post("/", characterController.create);
+router.post("/", authMiddleware, characterController.create);
 
 //GET /characters
 router.get("/", characterController.getAll);

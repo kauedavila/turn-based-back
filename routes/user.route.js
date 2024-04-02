@@ -1,6 +1,6 @@
 import express from "express";
 import userController from "../controllers/user.controller.js";
-import { validIdFormat, validateCharacterId } from "../middlewares/global.middlewares.js";
+import { validIdFormat, validateCharacterId } from "../middlewares/global.middleware.js";
 
 const router = express.Router();
 
