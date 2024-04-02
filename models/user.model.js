@@ -22,6 +22,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       minlength: 6,
+      Selection: false,
     },
     characters: [
       {

@@ -19,7 +19,13 @@ const userController = {
 
   getById: async (req, res) => {
     try {
-      const user = req.body;
+      const session = req.session;
+
+      if (!session) {
+        return res.status(404).json({ msg: "Session not found" });
+      }
+
+      const user = await UserModel.findById(session.id).populate("Character");
 
       res.status(200).json(user);
     } catch (error) {
