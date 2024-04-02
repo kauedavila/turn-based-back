@@ -23,6 +23,12 @@ const userSchema = new Schema(
       required: true,
       minlength: 6,
     },
+    characters: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Character",
+      },
+    ],
   },
   {
     timestamps: true,
