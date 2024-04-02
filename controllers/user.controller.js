@@ -25,7 +25,7 @@ const userController = {
         return res.status(404).json({ msg: "Session not found" });
       }
 
-      const user = await UserModel.findById(session.id).populate("Character");
+      const user = await UserModel.findById(session.id).populate("characters");
 
       res.status(200).json(user);
     } catch (error) {
