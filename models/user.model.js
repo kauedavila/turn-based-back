@@ -30,6 +30,14 @@ const userSchema = new Schema(
         ref: "Character",
       },
     ],
+    gold: {
+      type: Number,
+      default: 0,
+    },
+    souls: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,
