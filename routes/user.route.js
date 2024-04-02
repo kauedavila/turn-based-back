@@ -4,10 +4,12 @@ import { validIdFormat, validateCharacterId } from "../middlewares/global.middle
 
 const router = express.Router();
 
+const { create, getById } = userController;
+
 //POST /users
-router.post("/", userController.create);
+router.post("/", create);
 
 //GET /users
-router.get("/:id", validIdFormat, userController.getById);
+router.get("/:id", validIdFormat, getById);
 
 export default router;
