@@ -7,7 +7,7 @@ const router = express.Router();
 router.route("/").post((req, res) => stageController.create(req, res));
 
 //GET /stages
-router.route("/stages").get((req, res) => stageController.getAll(req, res));
+router.route("/").get((req, res) => stageController.getAll(req, res));
 router.route("/:id").get((req, res) => stageController.getById(req, res));
 
 //DELETE /stages/:id
