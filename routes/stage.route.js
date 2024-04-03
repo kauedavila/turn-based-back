@@ -6,16 +6,16 @@ const { create, getAll, getById, deleteById, updateById } = stageController;
 const router = express.Router();
 
 //POST /stages
-router.route("/").post((req, res) => create(req, res));
+router.post("/", create);
 
 //GET /stages
-router.route("/").get((req, res) => getAll(req, res));
-router.route("/:id").get((req, res) => getById(req, res));
+router.get("/", getAll);
+router.get("/:id", getById);
 
 //DELETE /stages/:id
-router.route("/:id").delete((req, res) => deleteById(req, res));
+router.delete("/:id", deleteById);
 
 //PUT /stages/:id
-router.route("/:id").put((req, res) => updateById(req, res));
+router.put("/:id", updateById);
 
 export default router;
