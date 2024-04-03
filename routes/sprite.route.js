@@ -5,7 +5,7 @@ const { getByClass } = spriteController;
 
 const router = express.Router();
 
-//GET /sprites
-router.get("/:class", getByClass);
+//GET /sprites/classes/:class
+router.get("/classes/:class", getByClass);
 
 export default router;

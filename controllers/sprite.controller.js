@@ -1,6 +1,27 @@
 import SpriteModel from "../models/sprite.model.js";
+import fs from "fs";
 
 const spriteController = {
+  getByClass: async (req, res) => {
+    const folder = "./public/uploads/classes/" + req.params.class + "/";
+    let filesResult = [];
+
+    try {
+      if (!fs.existsSync(folder)) {
+        return res.status(404).send({ msg: "Class not found" });
+      }
+
+      fs.readdir(folder, (err, files) => {
+        files.forEach((file) => {
+          filesResult.push(file);
+        });
+        res.status(200).send({ filesResult });
+      });
+    } catch (error) {
+      res.status(404).send({ error, msg: "Error getting sprites" });
+    }
+  },
+
   create: async (req, res) => {
     const file = req.file;
     try {
