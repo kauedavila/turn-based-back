@@ -5,6 +5,7 @@ import spriteRouter from "./sprite.route.js";
 import stageRouter from "./stage.route.js";
 import userRouter from "./user.route.js";
 import authRouter from "./auth.route.js";
+import classesRouter from "./classes.route.js";
 
 const router = express.Router();
 
@@ -24,7 +25,9 @@ router.use("/enemies", enemyRouter);
 router.use("/sprites", spriteRouter);
 
 //Stage router
-
 router.use("/stages", stageRouter);
+
+//Classes router
+router.use("/classes", classesRouter);
 
 export default router;
