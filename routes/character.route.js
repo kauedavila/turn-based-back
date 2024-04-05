@@ -7,8 +7,10 @@ const router = express.Router();
 
 const { create, getAll, getById, deleteById, updateById } = characterController;
 
+router.use(authMiddleware);
+
 //POST /characters
-router.post("/", authMiddleware, create);
+router.post("/", create);
 
 //GET /characters
 router.get("/", getAll);

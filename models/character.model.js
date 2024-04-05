@@ -4,14 +4,36 @@ const { Schema } = mongoose;
 
 const characterSchema = new Schema(
   {
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
     name: String,
-    level: Number,
+    level: {
+      type: Number,
+      default: 1,
+    },
     class: String,
-    experience: Number,
-    health: Number,
-    attack: Number,
-    defense: Number,
-    speed: Number,
+    experience: {
+      type: Number,
+      default: 0,
+    },
+    health: {
+      type: Number,
+      default: 100,
+    },
+    attack: {
+      type: Number,
+      default: 10,
+    },
+    defense: {
+      type: Number,
+      default: 10,
+    },
+    speed: {
+      type: Number,
+      default: 10,
+    },
     moves: [
       {
         name: String,

@@ -4,6 +4,7 @@ const characterController = {
   create: async (req, res) => {
     try {
       const character = {
+        user: req.session.id,
         name: req.body.name,
         level: req.body.level,
         class: req.body.class,
@@ -26,7 +27,7 @@ const characterController = {
 
   getAll: async (req, res) => {
     try {
-      const characters = await CharacterModel.find();
+      const characters = await CharacterModel.find({ user: req.session.id });
       res.status(200).json(characters);
     } catch (error) {
       res.status(400).json({ error, msg: "Error while trying to get characters" });
